@@ -12,7 +12,7 @@
       <h3>Please select a destination to get started</h3>
     </div>
     <div class="destination-container">
-      <div id="chicagoil" class="destination-card" onclick="selectDestination('Chicago', 166, 20.75, 'chicago_bean.jpg')">
+      <div id="chicagoil" class="destination-card" onclick="selectDestination('Chicago', 166, 'chicago_bean.jpg')">
         <div class="destination-card__text">
           <div class="destination-card__header">
             <h3>Chicago, IL</h3>
@@ -25,7 +25,7 @@
           <img src="img/chicago_bean.jpg" alt="chicago">
         </div>
       </div>
-      <div id="cincinnatioh" class="destination-card" onclick="selectDestination('Cincinnati', 125, 15.625, 'cincinnati_baseball_stadium.jpg')">
+      <div id="cincinnatioh" class="destination-card" onclick="selectDestination('Cincinnati', 125, 'cincinnati_baseball_stadium.jpg')">
         <div class="destination-card__text">
           <div class="destination-card__header">
             <h3>Cincinnati, OH</h3>
@@ -38,7 +38,7 @@
           <img src="img/cincinnati_baseball_stadium.jpg" alt="cincinnati">
         </div>
       </div>
-      <div id="dallastx" class="destination-card" onclick="selectDestination('Dallas', 910, 113.75, 'dallas_cityscape_night.jpg')">
+      <div id="dallastx" class="destination-card" onclick="selectDestination('Dallas', 910, 'dallas_cityscape_night.jpg')">
         <div class="destination-card__text">
           <div class="destination-card__header">
             <h3>Dallas, TX</h3>
@@ -51,20 +51,46 @@
           <img src="img/dallas_cityscape_night.jpg" alt="dallas">
         </div>
       </div>
-      <div id="denverco" class="destination-card" onclick="selectDestination('Denver', 1094, 136.75, 'denver_mountain_cityscape.jpg')">
+      <div id="denverco" class="destination-card" onclick="selectDestination('Denver', 1094, 'denver_mountain_cityscape.jpg')">
         <div class="destination-card__text">
           <div class="destination-card__header">
             <h3>Denver, CO</h3>
           </div>
           <div class="destination-card__details">
-            <p>1094 miles</p>
+            <p>1,094 miles</p>
           </div>
         </div>
         <div class="destination-card__image">
           <img src="img/denver_mountain_cityscape.jpg" alt="denver">
         </div>
       </div>
-      <div id="louisvilleky" class="destination-card" onclick="selectDestination('Louisville', 134, 16.75, 'louisville_river_night.jpg')">
+      <div id="lasvegasnv" class="destination-card" onclick="selectDestination('Las Vegas', 1840, 'lasvegas_strip.jpg')">
+        <div class="destination-card__text">
+          <div class="destination-card__header">
+            <h3>Las Vegas, NV</h3>
+          </div>
+          <div class="destination-card__details">
+            <p>1,840 miles</p>
+          </div>
+        </div>
+        <div class="destination-card__image">
+          <img src="img/lasvegas_strip.jpg" alt="lasvegas">
+        </div>
+      </div>
+      <div id="londonuk" class="destination-card" onclick="selectDestination('London', 3983, 'london_eye.jpg')">
+        <div class="destination-card__text">
+          <div class="destination-card__header">
+            <h3>London, UK</h3>
+          </div>
+          <div class="destination-card__details">
+            <p>3,983 miles</p>
+          </div>
+        </div>
+        <div class="destination-card__image">
+          <img src="img/london_eye.jpg" alt="london">
+        </div>
+      </div>
+      <div id="louisvilleky" class="destination-card" onclick="selectDestination('Louisville', 134, 'louisville_river_night.jpg')">
         <div class="destination-card__text">
           <div class="destination-card__header">
             <h3>Louisville, KY</h3>
@@ -77,7 +103,7 @@
           <img src="img/louisville_river_night.jpg" alt="louisville">
         </div>
       </div>
-      <div id="nashvilletn" class="destination-card" onclick="selectDestination('Nashville', 308, 38.5, 'nashville_broadway_st.jpg')">
+      <div id="nashvilletn" class="destination-card" onclick="selectDestination('Nashville', 308, 'nashville_broadway_st.jpg')">
         <div class="destination-card__text">
           <div class="destination-card__header">
             <h3>Nashville, TN</h3>
@@ -90,7 +116,33 @@
           <img src="img/nashville_broadway_st.jpg" alt="nashville">
         </div>
       </div>
-      <div id="saintjosephmi" class="destination-card" onclick="selectDestination('Saint Joseph', 170, 21.25, 'stjoseph_straydog.jpg')">
+      <div id="newyorkcityny" class="destination-card" onclick="selectDestination('New York City', 683, 'newyorkcity_statueofliberty.jpg')">
+        <div class="destination-card__text">
+          <div class="destination-card__header">
+            <h3>New York City, NY</h3>
+          </div>
+          <div class="destination-card__details">
+            <p>683 miles</p>
+          </div>
+        </div>
+        <div class="destination-card__image">
+          <img src="img/newyorkcity_statueofliberty.jpg" alt="newyorkcity">
+        </div>
+      </div>
+      <div id="parisfr" class="destination-card" onclick="selectDestination('Paris', 4163, 'paris_eiffeltower.jpg')">
+        <div class="destination-card__text">
+          <div class="destination-card__header">
+            <h3>Paris, FR</h3>
+          </div>
+          <div class="destination-card__details">
+            <p>4,163 miles</p>
+          </div>
+        </div>
+        <div class="destination-card__image">
+          <img src="img/paris_eiffeltower.jpg" alt="paris">
+        </div>
+      </div>
+      <div id="saintjosephmi" class="destination-card" onclick="selectDestination('Saint Joseph', 170, 'stjoseph_straydog.jpg')">
         <div class="destination-card__text">
           <div class="destination-card__header">
             <h3>Saint Joseph, MI</h3>
@@ -103,7 +155,7 @@
           <img src="img/stjoseph_straydog.jpg" alt="st joseph">
         </div>
       </div>
-      <div id="santarosabeachfl" class="destination-card" onclick="selectDestination('Santa Rosa Beach', 742, 92.75, '30A_beach_access.jpg')">
+      <div id="santarosabeachfl" class="destination-card" onclick="selectDestination('Santa Rosa Beach', 742, '30A_beach_access.jpg')">
         <div class="destination-card__text">
           <div class="destination-card__header">
             <h3>Santa Rosa Beach, FL</h3>
@@ -116,7 +168,20 @@
           <img src="img/30A_beach_access.jpg" alt="30A">
         </div>
       </div>
-      <div id="terrehautein" class="destination-card" onclick="selectDestination('Terre Haute', 84, 10.5, 'terrehaute_rosehulman_chapel.jpg')">
+      <div id="santorinigr" class="destination-card" onclick="selectDestination('Santorini', 5609, 'santorini_wateroverlook.jpg')">
+        <div class="destination-card__text">
+          <div class="destination-card__header">
+            <h3>Santorini, GR</h3>
+          </div>
+          <div class="destination-card__details">
+            <p>5,609 miles</p>
+          </div>
+        </div>
+        <div class="destination-card__image">
+          <img src="img/santorini_wateroverlook.jpg" alt="venice">
+        </div>
+      </div>
+      <div id="terrehautein" class="destination-card" onclick="selectDestination('Terre Haute', 84, 'terrehaute_rosehulman_chapel.jpg')">
         <div class="destination-card__text">
           <div class="destination-card__header">
             <h3>Terre Haute, IN</h3>
@@ -127,6 +192,32 @@
         </div>
         <div class="destination-card__image">
           <img src="img/terrehaute_rosehulman_chapel.jpg" alt="terre haute">
+        </div>
+      </div>
+      <div id="torontoca" class="destination-card" onclick="selectDestination('Toronto', 517, 'toronto_skyline.jpg')">
+        <div class="destination-card__text">
+          <div class="destination-card__header">
+            <h3>Toronto, CAN</h3>
+          </div>
+          <div class="destination-card__details">
+            <p>517 miles</p>
+          </div>
+        </div>
+        <div class="destination-card__image">
+          <img src="img/toronto_skyline.jpg" alt="toronto">
+        </div>
+      </div>
+      <div id="veniceit" class="destination-card" onclick="selectDestination('Venice', 4685, 'venice_grandecanal.jpg')">
+        <div class="destination-card__text">
+          <div class="destination-card__header">
+            <h3>Venice, IT</h3>
+          </div>
+          <div class="destination-card__details">
+            <p>4,685 miles</p>
+          </div>
+        </div>
+        <div class="destination-card__image">
+          <img src="img/venice_grandecanal.jpg" alt="venice">
         </div>
       </div>
     </div>

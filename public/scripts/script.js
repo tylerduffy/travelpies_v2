@@ -154,8 +154,8 @@ function updateFocusQuadrant(newFocusQuadrant) {
   ctx.clip();
 }
 
-function selectDestination(locationName, totalDistance, pieSliceDistance, locationImg) {
-  singlePieSliceDistance = pieSliceDistance;
+function selectDestination(locationName, totalDistance, locationImg) {
+  singlePieSliceDistance = totalDistance / 8;
   totalPieDistance = totalDistance;
   var selectionContainer = document.getElementById("selection-container");
   selectionContainer.classList.add('hidden');
@@ -164,7 +164,7 @@ function selectDestination(locationName, totalDistance, pieSliceDistance, locati
   var pieheader = document.getElementById('pie-header');
   pieheader.innerHTML = 'En Route to ' + locationName + '!';
   var distanceDetails = document.getElementById('distance-details');
-  distanceDetails.innerHTML = `<span>${pieSliceDistance} out of ${totalDistance} total miles</span>`;
+  distanceDetails.innerHTML = `<span>${singlePieSliceDistance} out of ${totalDistance} total miles</span>`;
 
   var piebackground = document.getElementById('pie-background');
   piebackground.style.backgroundImage = "url('img/" + locationImg + "')";
