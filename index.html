@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scratch Off Effect</title>
+  <link rel="stylesheet" href="style/style.css" />
+</head>
+<body>
+  <div id='selection-container' class="selection-container">
+    <div class="header">
+      <h1>Welcome to Cassidy's Travel Pies!</h1>
+      <h3>Please select a destination to get started</h3>
+    </div>
+    <div class="destination-container">
+      <div id="chicagoil" class="destination-card" onclick="selectDestination('Chicago', 166, 20.75, 'chicago_bean.jpg')">
+        <div class="destination-card__text">
+          <div class="destination-card__header">
+            <h3>Chicago, IL</h3>
+          </div>
+          <div class="destination-card__details">
+            <p>166 miles to go.</p>
+            <p>Fill in a pie slice every 20.75 miles.</p>
+          </div>
+        </div>
+        <div class="destination-card__image">
+          <img src="/img/chicago_bean.jpg" alt="30A">
+        </div>
+      </div>
+      <div id="cincinnatioh" class="destination-card" onclick="selectDestination('Cincinnati', 125, 15.625, 'cincinnati_baseball_stadium.jpg')">
+        <div class="destination-card__text">
+          <div class="destination-card__header">
+            <h3>Cincinnati, OH</h3>
+          </div>
+          <div class="destination-card__details">
+            <p>125 miles to go.</p>
+            <p>Fill in a pie slice every 15.625 miles.</p>
+          </div>
+        </div>
+        <div class="destination-card__image">
+          <img src="/img/cincinnati_baseball_stadium.jpg" alt="30A">
+        </div>
+      </div>
+      <div id="dallastx" class="destination-card" onclick="selectDestination('Dallas', 910, 113.75, 'dallas_cityscape_night.jpg')">
+        <div class="destination-card__text">
+          <div class="destination-card__header">
+            <h3>Dallas, TX</h3>
+          </div>
+          <div class="destination-card__details">
+            <p>910 miles to go.</p>
+            <p>Fill in a pie slice every 113.75 miles.</p>
+          </div>
+        </div>
+        <div class="destination-card__image">
+          <img src="/img/dallas_cityscape_night.jpg" alt="30A">
+        </div>
+      </div>
+      <div id="denverco" class="destination-card" onclick="selectDestination('Denver', 1094, 136.75, 'denver_mountain_cityscape.jpg')">
+        <div class="destination-card__text">
+          <div class="destination-card__header">
+            <h3>Denver, CO</h3>
+          </div>
+          <div class="destination-card__details">
+            <p>1094 miles to go.</p>
+            <p>Fill in a pie slice every 136.75 miles.</p>
+          </div>
+        </div>
+        <div class="destination-card__image">
+          <img src="/img/denver_mountain_cityscape.jpg" alt="30A">
+        </div>
+      </div>
+      <div id="louisvilleky" class="destination-card" onclick="selectDestination('Louisville', 134, 16.75, 'louisville_river_night.jpg')">
+        <div class="destination-card__text">
+          <div class="destination-card__header">
+            <h3>Louisville, KY</h3>
+          </div>
+          <div class="destination-card__details">
+            <p>134 miles to go.</p>
+            <p>Fill in a pie slice every 16.75 miles.</p>
+          </div>
+        </div>
+        <div class="destination-card__image">
+          <img src="/img/louisville_river_night.jpg" alt="30A">
+        </div>
+      </div>
+      <div id="nashvilletn" class="destination-card" onclick="selectDestination('Nashville', 308, 38.5, 'nashville_broadway_st.jpg')">
+        <div class="destination-card__text">
+          <div class="destination-card__header">
+            <h3>Nashville, TN</h3>
+          </div>
+          <div class="destination-card__details">
+            <p>308 miles to go.</p>
+            <p>Fill in a pie slice every 38.5 miles.</p>
+          </div>
+        </div>
+        <div class="destination-card__image">
+          <img src="/img/nashville_broadway_st.jpg" alt="30A">
+        </div>
+      </div>
+      <div id="saintjosephmi" class="destination-card" onclick="selectDestination('Saint Joseph', 170, 21.25, 'stjoseph_straydog.jpg')">
+        <div class="destination-card__text">
+          <div class="destination-card__header">
+            <h3>Saint Joseph, MI</h3>
+          </div>
+          <div class="destination-card__details">
+            <p>170 miles to go.</p>
+            <p>Fill in a pie slice every 21.25 miles.</p>
+          </div>
+        </div>
+        <div class="destination-card__image">
+          <img src="/img/stjoseph_straydog.jpg" alt="30A">
+        </div>
+      </div>
+      <div id="santarosabeachfl" class="destination-card" onclick="selectDestination('Santa Rosa Beach', 742, 92.75, '30A_beach_access.jpg')">
+        <div class="destination-card__text">
+          <div class="destination-card__header">
+            <h3>Santa Rosa Beach, FL</h3>
+          </div>
+          <div class="destination-card__details">
+            <p>742 miles to go.</p>
+            <p>Fill in a pie slice every 92.75 miles.</p>
+          </div>
+        </div>
+        <div class="destination-card__image">
+          <img src="/img/30A_beach_access.jpg" alt="30A">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id='canvas-container' class="hidden canvas-container">
+    <div class="header">
+      <h1 id='pie-header'>En Route to 30A!</h1>
+      <div class="quadrant-picker">
+        <h3>Leg</h3>
+        <input id="quadrant-input" type="number" value="1" min="1" max="8" onchange="updateFocusQuadrant()">
+        <h3>of 8</h3>
+      </div>
+      <div id="distance-details" class="distance-details"></div>
+    </div>
+    <div id='pie-background' class="background">
+      <canvas id="scratchCanvas"></canvas>
+    </div>
+  </div>
+  <script src="/scripts/script.js"></script>
+</body>
+</html>
