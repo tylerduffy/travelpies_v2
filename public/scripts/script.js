@@ -215,7 +215,6 @@ let events = {
 const getXY = (e) => {
   mouseX = (!isTouchDevice() ? e.clientX - canvas.offsetLeft : e.touches[0].pageX - canvas.getBoundingClientRect().left);
   mouseY = (!isTouchDevice() ? e.clientY - canvas.offsetTop : e.touches[0].pageY - canvas.getBoundingClientRect().top);
-  console.log('mouse: (' + mouseX + ', ' + mouseY + ')');
 };
 
 isTouchDevice();
