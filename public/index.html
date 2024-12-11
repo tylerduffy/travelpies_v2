@@ -18,12 +18,11 @@
             <h3>Chicago, IL</h3>
           </div>
           <div class="destination-card__details">
-            <p>166 miles to go.</p>
-            <p>Fill in a pie slice every 20.75 miles.</p>
+            <p>166 miles</p>
           </div>
         </div>
         <div class="destination-card__image">
-          <img src="/img/chicago_bean.jpg" alt="30A">
+          <img src="img/chicago_bean.jpg" alt="chicago">
         </div>
       </div>
       <div id="cincinnatioh" class="destination-card" onclick="selectDestination('Cincinnati', 125, 15.625, 'cincinnati_baseball_stadium.jpg')">
@@ -32,12 +31,11 @@
             <h3>Cincinnati, OH</h3>
           </div>
           <div class="destination-card__details">
-            <p>125 miles to go.</p>
-            <p>Fill in a pie slice every 15.625 miles.</p>
+            <p>125 miles</p>
           </div>
         </div>
         <div class="destination-card__image">
-          <img src="/img/cincinnati_baseball_stadium.jpg" alt="30A">
+          <img src="img/cincinnati_baseball_stadium.jpg" alt="cincinnati">
         </div>
       </div>
       <div id="dallastx" class="destination-card" onclick="selectDestination('Dallas', 910, 113.75, 'dallas_cityscape_night.jpg')">
@@ -46,12 +44,11 @@
             <h3>Dallas, TX</h3>
           </div>
           <div class="destination-card__details">
-            <p>910 miles to go.</p>
-            <p>Fill in a pie slice every 113.75 miles.</p>
+            <p>910 miles</p>
           </div>
         </div>
         <div class="destination-card__image">
-          <img src="/img/dallas_cityscape_night.jpg" alt="30A">
+          <img src="img/dallas_cityscape_night.jpg" alt="dallas">
         </div>
       </div>
       <div id="denverco" class="destination-card" onclick="selectDestination('Denver', 1094, 136.75, 'denver_mountain_cityscape.jpg')">
@@ -60,12 +57,11 @@
             <h3>Denver, CO</h3>
           </div>
           <div class="destination-card__details">
-            <p>1094 miles to go.</p>
-            <p>Fill in a pie slice every 136.75 miles.</p>
+            <p>1094 miles</p>
           </div>
         </div>
         <div class="destination-card__image">
-          <img src="/img/denver_mountain_cityscape.jpg" alt="30A">
+          <img src="img/denver_mountain_cityscape.jpg" alt="denver">
         </div>
       </div>
       <div id="louisvilleky" class="destination-card" onclick="selectDestination('Louisville', 134, 16.75, 'louisville_river_night.jpg')">
@@ -74,12 +70,11 @@
             <h3>Louisville, KY</h3>
           </div>
           <div class="destination-card__details">
-            <p>134 miles to go.</p>
-            <p>Fill in a pie slice every 16.75 miles.</p>
+            <p>134 miles</p>
           </div>
         </div>
         <div class="destination-card__image">
-          <img src="/img/louisville_river_night.jpg" alt="30A">
+          <img src="img/louisville_river_night.jpg" alt="louisville">
         </div>
       </div>
       <div id="nashvilletn" class="destination-card" onclick="selectDestination('Nashville', 308, 38.5, 'nashville_broadway_st.jpg')">
@@ -88,12 +83,11 @@
             <h3>Nashville, TN</h3>
           </div>
           <div class="destination-card__details">
-            <p>308 miles to go.</p>
-            <p>Fill in a pie slice every 38.5 miles.</p>
+            <p>308 miles</p>
           </div>
         </div>
         <div class="destination-card__image">
-          <img src="/img/nashville_broadway_st.jpg" alt="30A">
+          <img src="img/nashville_broadway_st.jpg" alt="nashville">
         </div>
       </div>
       <div id="saintjosephmi" class="destination-card" onclick="selectDestination('Saint Joseph', 170, 21.25, 'stjoseph_straydog.jpg')">
@@ -102,12 +96,11 @@
             <h3>Saint Joseph, MI</h3>
           </div>
           <div class="destination-card__details">
-            <p>170 miles to go.</p>
-            <p>Fill in a pie slice every 21.25 miles.</p>
+            <p>170 miles</p>
           </div>
         </div>
         <div class="destination-card__image">
-          <img src="/img/stjoseph_straydog.jpg" alt="30A">
+          <img src="img/stjoseph_straydog.jpg" alt="st joseph">
         </div>
       </div>
       <div id="santarosabeachfl" class="destination-card" onclick="selectDestination('Santa Rosa Beach', 742, 92.75, '30A_beach_access.jpg')">
@@ -116,23 +109,37 @@
             <h3>Santa Rosa Beach, FL</h3>
           </div>
           <div class="destination-card__details">
-            <p>742 miles to go.</p>
-            <p>Fill in a pie slice every 92.75 miles.</p>
+            <p>742 miles</p>
           </div>
         </div>
         <div class="destination-card__image">
-          <img src="/img/30A_beach_access.jpg" alt="30A">
+          <img src="img/30A_beach_access.jpg" alt="30A">
+        </div>
+      </div>
+      <div id="terrehautein" class="destination-card" onclick="selectDestination('Terre Haute', 84, 10.5, 'terrehaute_rosehulman_chapel.jpg')">
+        <div class="destination-card__text">
+          <div class="destination-card__header">
+            <h3>Terre Haute, IN</h3>
+          </div>
+          <div class="destination-card__details">
+            <p>84 miles</p>
+          </div>
+        </div>
+        <div class="destination-card__image">
+          <img src="img/terrehaute_rosehulman_chapel.jpg" alt="terre haute">
         </div>
       </div>
     </div>
   </div>
   <div id='canvas-container' class="hidden canvas-container">
     <div class="header">
-      <h1 id='pie-header'>En Route to 30A!</h1>
+      <h1 id='pie-header'>En Route to Destination!</h1>
       <div class="quadrant-picker">
-        <h3>Leg</h3>
-        <input id="quadrant-input" type="number" value="1" min="1" max="8" onchange="updateFocusQuadrant()">
-        <h3>of 8</h3>
+        <h3 id='quadrant-label'>Leg 1 (of 8)</h3>
+        <div class="buttons">
+          <button class="button button__previous" onclick="previousFocusQuadrant()">&#x2B9C; Previous</button>
+          <button class="button button__next" onclick="nextFocusQuadrant()">Next &#x2B9E;</button>
+        </div>
       </div>
       <div id="distance-details" class="distance-details"></div>
     </div>

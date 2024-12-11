@@ -9,5 +9,5 @@ app.use('/scripts', express.static(__dirname + '/public/scripts'));
 app.use('/img', express.static(__dirname + '/public/img'));
 
 var server = app.listen(port, function() {
-    console.log('Server is running on port ${port}');
+    console.log(`Server is running on port ${port}`);
 });

@@ -46,7 +46,7 @@ const init = () => {
   ctx.fillRect(0, 0, pieDiameter, pieDiameter);
   drawSlices();
   ctx.restore();
-  updateFocusQuadrant();
+  updateFocusQuadrant(1);
 };
 
 
@@ -101,14 +101,12 @@ function drawSlices() {
 }
 
 function drawSlice(startX, startY, endX, endY) {
-  ctx.save();
   ctx.beginPath();
   ctx.moveTo(startX, startY);
   ctx.lineTo(endX, endY);
   ctx.lineWidth = pieSliceWidth/10;
   ctx.strokeStyle = 'black';
   ctx.stroke();
-  ctx.restore();
 }
 
 function scratch(mouseX, mouseY) {
@@ -127,9 +125,25 @@ function scratch(mouseX, mouseY) {
   }
 }
 
-function updateFocusQuadrant() {
-  const input = document.getElementById('quadrant-input');
-  focusQuadrant = parseInt(input.value);
+function nextFocusQuadrant() {
+  if (focusQuadrant < 8) {
+    focusQuadrant++;
+    updateFocusQuadrant(focusQuadrant);
+  }
+}
+
+function previousFocusQuadrant() {
+  if (focusQuadrant > 1) {
+    focusQuadrant--;
+    updateFocusQuadrant(focusQuadrant);
+  }
+}
+
+function updateFocusQuadrant(newFocusQuadrant) {
+  const input = document.getElementById('quadrant-label');
+  input.innerHTML = `Leg ${newFocusQuadrant} (of 8)`;
+  const distanceDetails = document.getElementById('distance-details');
+  distanceDetails.innerHTML = `<span>${singlePieSliceDistance*newFocusQuadrant} out of ${totalPieDistance} total miles</span>`;
   ctx.restore();
   ctx.save();
   ctx.beginPath();
@@ -141,6 +155,8 @@ function updateFocusQuadrant() {
 }
 
 function selectDestination(locationName, totalDistance, pieSliceDistance, locationImg) {
+  singlePieSliceDistance = pieSliceDistance;
+  totalPieDistance = totalDistance;
   var selectionContainer = document.getElementById("selection-container");
   selectionContainer.classList.add('hidden');
   var canvasContainer = document.getElementById("canvas-container");
@@ -148,10 +164,10 @@ function selectDestination(locationName, totalDistance, pieSliceDistance, locati
   var pieheader = document.getElementById('pie-header');
   pieheader.innerHTML = 'En Route to ' + locationName + '!';
   var distanceDetails = document.getElementById('distance-details');
-  distanceDetails.innerHTML = '<h4><b>'+totalDistance+'</b> total miles ('+pieSliceDistance+' per slice).';
+  distanceDetails.innerHTML = `<span>${pieSliceDistance} out of ${totalDistance} total miles</span>`;
 
   var piebackground = document.getElementById('pie-background');
-  piebackground.style.backgroundImage = "url('/img/" + locationImg + "')";
+  piebackground.style.backgroundImage = "url('img/" + locationImg + "')";
 }
 
 let deviceType = "";
@@ -185,6 +201,8 @@ const fortyFiveOffsetY = (Math.sqrt(2) * pieDiameter)/2;
 const fillColorGradientStart = 'rgb(85, 88, 218)'; //"#c3a3f1"
 const fillColorGradientEnd = 'rgb(95, 209, 249)'; //"#6414e9"
 var focusQuadrant = 1;
+var singlePieSliceDistance = 0;
+var totalPieDistance = 0;
 var mouseX = 0;
 var mouseY = 0;
 

@@ -53,7 +53,7 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
-    row-gap: 25px;
+    row-gap: 15px;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -74,7 +74,7 @@ body {
 .destination-card {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     column-gap: 15px;
     width: 450px;
@@ -92,7 +92,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
     height: 100%;
+    width: 100%;
 }
 
 .destination-card__image img {
@@ -105,15 +107,41 @@ body {
 .header {
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
     justify-content: center;
     align-items: center;
+    row-gap: 5px;
 }
 
 .quadrant-picker {
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    row-gap: 5px;
+    width: 100%;
+}
+
+.buttons {
+    display: flex;
     flex-direction: row;
-    column-gap: 5px;
+    column-gap: 1rem;
+    width: 75%;
+    margin-bottom: 5px;
+}
+
+.buttons > * {
+    min-width: fit-content;
+    flex: 1;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.button {
+    font-weight: bold;
+    padding: 5px;
+    background-color: white;
+    border-radius: 5px;
 }
 
 input {
