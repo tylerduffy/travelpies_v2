@@ -156,7 +156,6 @@ input {
     height: var(--travelpie-dimension);
     overflow-y: hidden;
     overflow-x: hidden;
-    /* background-image: url('/img/dallas_griggs_park.jpg'); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;

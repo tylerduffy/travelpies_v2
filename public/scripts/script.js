@@ -168,6 +168,9 @@ function selectDestination(locationName, totalDistance, locationImg) {
 
   var piebackground = document.getElementById('pie-background');
   piebackground.style.backgroundImage = "url('img/" + locationImg + "')";
+
+  document.body.scrollTop = 0; // safari
+  document.documentElement.scrollTop = 0; // chrome, firefox, ie, opera
 }
 
 let deviceType = "";
