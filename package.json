@@ -10,7 +10,8 @@
   "description": "",
   "dependencies": {
     "-": "^0.0.1",
-    "express": "^4.21.2",
+    "ejs": "^4.0.1",
+    "express": "^4.22.1",
     "save": "^2.9.0"
   }
 }

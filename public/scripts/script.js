@@ -142,8 +142,10 @@ function previousFocusQuadrant() {
 function updateFocusQuadrant(newFocusQuadrant) {
   const input = document.getElementById('quadrant-label');
   input.innerHTML = `Leg ${newFocusQuadrant} (of 8)`;
-  const distanceDetails = document.getElementById('distance-details');
-  distanceDetails.innerHTML = `<span>${singlePieSliceDistance*newFocusQuadrant} out of ${totalPieDistance} total miles</span>`;
+  const distanceDetails = document.getElementById('current-distance');
+  const totalDistance = parseInt(document.getElementById('total-distance').textContent);
+  singlePieSliceDistance = totalDistance / 8;
+  distanceDetails.innerHTML = `${singlePieSliceDistance*newFocusQuadrant}`;
   ctx.restore();
   ctx.save();
   ctx.beginPath();

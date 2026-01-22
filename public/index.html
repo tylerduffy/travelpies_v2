@@ -7,262 +7,331 @@
   <link rel="icon" type="image/x-icon" href="img/logo.png">
 </head>
 <body>
+  <div class="top-nav"><a class="nav-link" href="/">travelpies</a></div>
   <div id='selection-container' class="selection-container">
     <div class="header">
       <h1>Welcome to Cassidy's Travel Pies!</h1>
-      <h3>Please select a destination to get started</h3>
+      <h3>Where Would You Like To Go?</h3>
+      <div class="search-container">
+        <input type="text" id="destinationSearchInput" onkeyup="filterDestinations()" placeholder="Search Destinations..">
+      </div>
     </div>
-    <div class="destination-container">
-      <div id="chicagoil" class="destination-card" onclick="selectDestination('Chicago', 166, 'chicago_bean.jpg')">
-        <div class="destination-card__text">
-          <div class="destination-card__header">
-            <h3>Chicago, IL</h3>
+    <div id="destinations" class="destination-container">
+      <div id="carmelin" class="destination-card" data-keywords="carmel,indiana">
+        <a class="destination-card-link" href="/distance?destination=Carmel">
+          <div class="destination-card__image">
+            <img src="img/carmel_in.jpg" alt="carmel">
           </div>
-          <div class="destination-card__details">
-            <p>166 miles</p>
+          <div class="destination-card__text">
+            <div class="destination-card__header">
+              <h3>Carmel, IN</h3>
+            </div>
           </div>
-        </div>
-        <div class="destination-card__image">
-          <img src="img/chicago_bean.jpg" alt="chicago">
-        </div>
+        </a>
       </div>
-      <div id="cincinnatioh" class="destination-card" onclick="selectDestination('Cincinnati', 125, 'cincinnati_baseball_stadium.jpg')">
-        <div class="destination-card__text">
-          <div class="destination-card__header">
-            <h3>Cincinnati, OH</h3>
+      <div id="chicagoil" class="destination-card" data-keywords="chicago,illinois">
+        <a class="destination-card-link" href="/distance?destination=Chicago">
+          <div class="destination-card__image">
+            <img src="img/chicago_bean.jpg" alt="chicago">
           </div>
-          <div class="destination-card__details">
-            <p>125 miles</p>
+          <div class="destination-card__text">
+            <div class="destination-card__header">
+              <h3>Chicago, IL</h3>
+            </div>
           </div>
-        </div>
-        <div class="destination-card__image">
-          <img src="img/cincinnati_baseball_stadium.jpg" alt="cincinnati">
-        </div>
+        </a>
       </div>
-      <div id="dallastx" class="destination-card" onclick="selectDestination('Dallas', 910, 'dallas_cityscape_night.jpg')">
-        <div class="destination-card__text">
-          <div class="destination-card__header">
-            <h3>Dallas, TX</h3>
+      <div id="cincinnatioh" class="destination-card" data-keywords="cincinnati,ohio">
+        <a class="destination-card-link" href="/distance?destination=Cincinnati">
+          <div class="destination-card__image">
+            <img src="img/cincinnati_baseball_stadium.jpg" alt="cincinnati">
           </div>
-          <div class="destination-card__details">
-            <p>910 miles</p>
+          <div class="destination-card__text">
+            <div class="destination-card__header">
+              <h3>Cincinnati, OH</h3>
+            </div>
           </div>
-        </div>
-        <div class="destination-card__image">
-          <img src="img/dallas_cityscape_night.jpg" alt="dallas">
-        </div>
+        </a>
       </div>
-      <div id="denverco" class="destination-card" onclick="selectDestination('Denver', 1094, 'denver_mountain_cityscape.jpg')">
-        <div class="destination-card__text">
-          <div class="destination-card__header">
-            <h3>Denver, CO</h3>
+      <div id="dallastx" class="destination-card" data-keywords="dallas,texas">
+        <a class="destination-card-link" href="/distance?destination=Dallas">
+          <div class="destination-card__image">
+            <img src="img/dallas_cityscape_night.jpg" alt="dallas">
           </div>
-          <div class="destination-card__details">
-            <p>1,094 miles</p>
+          <div class="destination-card__text">
+            <div class="destination-card__header">
+              <h3>Dallas, TX</h3>
+            </div>
           </div>
-        </div>
-        <div class="destination-card__image">
-          <img src="img/denver_mountain_cityscape.jpg" alt="denver">
-        </div>
+        </a>
       </div>
-      <div id="goldcoastau" class="destination-card" onclick="selectDestination('Gold Coast', 8979, 'goldcoast_beach.jpg')">
-        <div class="destination-card__text">
-          <div class="destination-card__header">
-            <h3>Gold Coast, AU</h3>
+      <div id="denverco" class="destination-card" data-keywords="denver,colorado">
+        <a class="destination-card-link" href="/distance?destination=Denver">
+          <div class="destination-card__image">
+            <img src="img/denver_mountain_cityscape.jpg" alt="denver">
           </div>
-          <div class="destination-card__details">
-            <p>8,979 miles</p>
+          <div class="destination-card__text">
+            <div class="destination-card__header">
+              <h3>Denver, CO</h3>
+            </div>
           </div>
-        </div>
-        <div class="destination-card__image">
-          <img src="img/goldcoast_beach.jpg" alt="goldcoast">
-        </div>
+        </a>
       </div>
-      <div id="lasvegasnv" class="destination-card" onclick="selectDestination('Las Vegas', 1840, 'lasvegas_strip.jpg')">
-        <div class="destination-card__text">
-          <div class="destination-card__header">
-            <h3>Las Vegas, NV</h3>
+      <div id="goldcoastau" class="destination-card" data-keywords="gold,coast,australia">
+        <a class="destination-card-link" href="/distance?destination=Gold_Coast">
+          <div class="destination-card__image">
+            <img src="img/goldcoast_beach.jpg" alt="goldcoast">
           </div>
-          <div class="destination-card__details">
-            <p>1,840 miles</p>
+          <div class="destination-card__text">
+            <div class="destination-card__header">
+              <h3>Gold Coast, AU</h3>
+            </div>
           </div>
-        </div>
-        <div class="destination-card__image">
-          <img src="img/lasvegas_strip.jpg" alt="lasvegas">
-        </div>
+        </a>
       </div>
-      <div id="keyonnabeachag" class="destination-card" onclick="selectDestination('Keyonna Beach', 2152, 'keyonnabeach_antigua.jpg')">
-        <div class="destination-card__text">
-          <div class="destination-card__header">
-            <h3>Keyonna Beach, AG</h3>
+      <div id="indiana" class="destination-card" data-keywords="indiana">
+        <a class="destination-card-link" href="/distance?destination=Indiana">
+          <div class="destination-card__image">
+            <img src="img/flag_of_indiana.jpg" alt="indiana">
           </div>
-          <div class="destination-card__details">
-            <p>2,152 miles</p>
+          <div class="destination-card__text">
+            <div class="destination-card__header">
+              <h3>Indiana</h3>
+            </div>
           </div>
-        </div>
-        <div class="destination-card__image">
-          <img src="img/keyonnabeach_antigua.jpg" alt="keyonnabeach">
-        </div>
+        </a>
       </div>
-      <div id="londonuk" class="destination-card" onclick="selectDestination('London', 3983, 'london_eye.jpg')">
-        <div class="destination-card__text">
-          <div class="destination-card__header">
-            <h3>London, UK</h3>
+      <div id="indianapolisin" class="destination-card" data-keywords="indianapolis,indiana">
+        <a class="destination-card-link" href="/distance?destination=Indianapolis">
+          <div class="destination-card__image">
+            <img src="img/indianapolis_in.jpg" alt="indianapolis">
           </div>
-          <div class="destination-card__details">
-            <p>3,983 miles</p>
+          <div class="destination-card__text">
+            <div class="destination-card__header">
+              <h3>Indianapolis, IN</h3>
+            </div>
           </div>
-        </div>
-        <div class="destination-card__image">
-          <img src="img/london_eye.jpg" alt="london">
-        </div>
+        </a>
       </div>
-      <div id="louisvilleky" class="destination-card" onclick="selectDestination('Louisville', 134, 'louisville_river_night.jpg')">
-        <div class="destination-card__text">
-          <div class="destination-card__header">
-            <h3>Louisville, KY</h3>
+      <div id="lasvegasnv" class="destination-card" data-keywords="las,vegas,nevada">
+        <a class="destination-card-link" href="/distance?destination=Las_Vegas">
+          <div class="destination-card__image">
+            <img src="img/lasvegas_strip.jpg" alt="lasvegas">
           </div>
-          <div class="destination-card__details">
-            <p>134 miles</p>
+          <div class="destination-card__text">
+            <div class="destination-card__header">
+              <h3>Las Vegas, NV</h3>
+            </div>
           </div>
-        </div>
-        <div class="destination-card__image">
-          <img src="img/louisville_river_night.jpg" alt="louisville">
-        </div>
+        </a>
       </div>
-      <div id="nashvilletn" class="destination-card" onclick="selectDestination('Nashville', 308, 'nashville_broadway_st.jpg')">
-        <div class="destination-card__text">
-          <div class="destination-card__header">
-            <h3>Nashville, TN</h3>
+      <div id="keyonnabeachag" class="destination-card" data-keywords="keyonna,beach,antigua">
+        <a class="destination-card-link" href="/distance?destination=Keyonna_Beach">
+          <div class="destination-card__image">
+            <img src="img/keyonnabeach_antigua.jpg" alt="keyonnabeach">
           </div>
-          <div class="destination-card__details">
-            <p>308 miles</p>
+          <div class="destination-card__text">
+            <div class="destination-card__header">
+              <h3>Keyonna Beach, AG</h3>
+            </div>
           </div>
-        </div>
-        <div class="destination-card__image">
-          <img src="img/nashville_broadway_st.jpg" alt="nashville">
-        </div>
+        </a>
       </div>
-      <div id="newbuffalomi" class="destination-card" onclick="selectDestination('New Buffalo', 168, 'newbuffalo_straydog.jpg')">
-        <div class="destination-card__text">
-          <div class="destination-card__header">
-            <h3>New Buffalo, MI</h3>
+      <div id="londonuk" class="destination-card" data-keywords="london,united,kingdom,uk">
+        <a class="destination-card-link" href="/distance?destination=London">
+          <div class="destination-card__image">
+            <img src="img/london_eye.jpg" alt="london">
           </div>
-          <div class="destination-card__details">
-            <p>168 miles</p>
+          <div class="destination-card__text">
+            <div class="destination-card__header">
+              <h3>London, UK</h3>
+            </div>
           </div>
-        </div>
-        <div class="destination-card__image">
-          <img src="img/newbuffalo_straydog.jpg" alt="newbuffalo">
-        </div>
+        </a>
       </div>
-      <div id="newyorkcityny" class="destination-card" onclick="selectDestination('New York City', 683, 'newyorkcity_statueofliberty.jpg')">
-        <div class="destination-card__text">
-          <div class="destination-card__header">
-            <h3>New York City, NY</h3>
+      <div id="losangelesca" class="destination-card" data-keywords="los,angeles,california">
+        <a class="destination-card-link" href="/distance?destination=Los_Angeles">
+          <div class="destination-card__image">
+            <img src="img/losangeles_ca.jpg" alt="losangeles">
           </div>
-          <div class="destination-card__details">
-            <p>683 miles</p>
+          <div class="destination-card__text">
+            <div class="destination-card__header">
+              <h3>Los Angeles, CA</h3>
+            </div>
           </div>
-        </div>
-        <div class="destination-card__image">
-          <img src="img/newyorkcity_statueofliberty.jpg" alt="newyorkcity">
-        </div>
+        </a>
       </div>
-      <div id="parisfr" class="destination-card" onclick="selectDestination('Paris', 4163, 'paris_eiffeltower.jpg')">
-        <div class="destination-card__text">
-          <div class="destination-card__header">
-            <h3>Paris, FR</h3>
+      <div id="louisvilleky" class="destination-card" data-keywords="louisville,kentucky">
+        <a class="destination-card-link" href="/distance?destination=Louisville">
+          <div class="destination-card__image">
+            <img src="img/louisville_river_night.jpg" alt="louisville">
           </div>
-          <div class="destination-card__details">
-            <p>4,163 miles</p>
+          <div class="destination-card__text">
+            <div class="destination-card__header">
+              <h3>Louisville, KY</h3>
+            </div>
           </div>
-        </div>
-        <div class="destination-card__image">
-          <img src="img/paris_eiffeltower.jpg" alt="paris">
-        </div>
+        </a>
       </div>
-      <div id="plymouthmi" class="destination-card" onclick="selectDestination('Plymouth', 222, 'plymouth_clocktower.jpg')">
-        <div class="destination-card__text">
-          <div class="destination-card__header">
-            <h3>Plymouth, MI</h3>
+      <div id="nashvilletn" class="destination-card" data-keywords="nashville,tennessee">
+        <a class="destination-card-link" href="/distance?destination=Nashville">
+          <div class="destination-card__image">
+            <img src="img/nashville_broadway_st.jpg" alt="nashville">
           </div>
-          <div class="destination-card__details">
-            <p>222 miles</p>
+          <div class="destination-card__text">
+            <div class="destination-card__header">
+              <h3>Nashville, TN</h3>
+            </div>
           </div>
-        </div>
-        <div class="destination-card__image">
-          <img src="img/plymouth_clocktower.jpg" alt="paris">
-        </div>
+        </a>
       </div>
-      <div id="santarosabeachfl" class="destination-card" onclick="selectDestination('Santa Rosa Beach', 742, '30A_beach_access.jpg')">
-        <div class="destination-card__text">
-          <div class="destination-card__header">
-            <h3>Santa Rosa Beach, FL</h3>
+      <div id="newbuffalomi" class="destination-card" data-keywords="new,buffalo,michigan">
+        <a class="destination-card-link" href="/distance?destination=New_Buffalo">
+          <div class="destination-card__image">
+            <img src="img/newbuffalo_straydog.jpg" alt="newbuffalo">
           </div>
-          <div class="destination-card__details">
-            <p>742 miles</p>
+          <div class="destination-card__text">
+            <div class="destination-card__header">
+              <h3>New Buffalo, MI</h3>
+            </div>
           </div>
-        </div>
-        <div class="destination-card__image">
-          <img src="img/30A_beach_access.jpg" alt="santarosabeach">
-        </div>
+        </a>
       </div>
-      <div id="santorinigr" class="destination-card" onclick="selectDestination('Santorini', 5609, 'santorini_wateroverlook.jpg')">
-        <div class="destination-card__text">
-          <div class="destination-card__header">
-            <h3>Santorini, GR</h3>
+      <div id="newyorkcityny" class="destination-card" data-keywords="new,york,city">
+        <a class="destination-card-link" href="/distance?destination=New_York_City">
+          <div class="destination-card__image">
+            <img src="img/newyorkcity_statueofliberty.jpg" alt="newyorkcity">
           </div>
-          <div class="destination-card__details">
-            <p>5,609 miles</p>
+          <div class="destination-card__text">
+            <div class="destination-card__header">
+              <h3>New York City, NY</h3>
+            </div>
           </div>
-        </div>
-        <div class="destination-card__image">
-          <img src="img/santorini_wateroverlook.jpg" alt="venice">
-        </div>
+        </a>
       </div>
-      <div id="terrehautein" class="destination-card" onclick="selectDestination('Terre Haute', 84, 'terrehaute_rosehulman_chapel.jpg')">
-        <div class="destination-card__text">
-          <div class="destination-card__header">
-            <h3>Terre Haute, IN</h3>
+      <div id="parisfr" class="destination-card" data-keywords="paris,france">
+        <a class="destination-card-link" href="/distance?destination=Paris">
+          <div class="destination-card__image">
+            <img src="img/paris_eiffeltower.jpg" alt="paris">
           </div>
-          <div class="destination-card__details">
-            <p>84 miles</p>
+          <div class="destination-card__text">
+            <div class="destination-card__header">
+              <h3>Paris, FR</h3>
+            </div>
           </div>
-        </div>
-        <div class="destination-card__image">
-          <img src="img/terrehaute_rosehulman_chapel.jpg" alt="terrehaute">
-        </div>
+        </a>
       </div>
-      <div id="torontoca" class="destination-card" onclick="selectDestination('Toronto', 517, 'toronto_skyline.jpg')">
-        <div class="destination-card__text">
-          <div class="destination-card__header">
-            <h3>Toronto, CA</h3>
+      <div id="plymouthmi" class="destination-card" data-keywords="plymouth,michigan">
+        <a class="destination-card-link" href="/distance?destination=Plymouth">
+          <div class="destination-card__image">
+            <img src="img/plymouth_clocktower.jpg" alt="paris">
           </div>
-          <div class="destination-card__details">
-            <p>517 miles</p>
+          <div class="destination-card__text">
+            <div class="destination-card__header">
+              <h3>Plymouth, MI</h3>
+            </div>
           </div>
-        </div>
-        <div class="destination-card__image">
-          <img src="img/toronto_skyline.jpg" alt="toronto">
-        </div>
+        </a>
       </div>
-      <div id="veniceit" class="destination-card" onclick="selectDestination('Venice', 4685, 'venice_grandecanal.jpg')">
-        <div class="destination-card__text">
-          <div class="destination-card__header">
-            <h3>Venice, IT</h3>
+      <div id="sanfranciscoca" class="destination-card" data-keywords="san,francisco,california">
+        <a class="destination-card-link" href="/distance?destination=San_Francisco">
+          <div class="destination-card__image">
+            <img src="img/sanfrancisco_ca.jpg" alt="sanfrancisco">
           </div>
-          <div class="destination-card__details">
-            <p>4,685 miles</p>
+          <div class="destination-card__text">
+            <div class="destination-card__header">
+              <h3>San Francisco, CA</h3>
+            </div>
           </div>
-        </div>
-        <div class="destination-card__image">
-          <img src="img/venice_grandecanal.jpg" alt="venice">
-        </div>
+        </a>
+      </div>
+      <div id="santarosabeachfl" class="destination-card" data-keywords="santa,rosa,beach,florida">
+        <a class="destination-card-link" href="/distance?destination=Santa_Rosa">
+          <div class="destination-card__image">
+            <img src="img/30A_beach_access.jpg" alt="santarosabeach">
+          </div>
+          <div class="destination-card__text">
+            <div class="destination-card__header">
+              <h3>Santa Rosa Beach, FL</h3>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div id="santorinigr" class="destination-card" data-keywords="santorini,greece">
+        <a class="destination-card-link" href="/distance?destination=Santorini">
+          <div class="destination-card__image">
+            <img src="img/santorini_wateroverlook.jpg" alt="venice">
+          </div>
+          <div class="destination-card__text">
+            <div class="destination-card__header">
+              <h3>Santorini, GR</h3>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div id="terrehautein" class="destination-card" data-keywords="terre,haute,indiana">
+        <a class="destination-card-link" href="/distance?destination=Terre_Haute">
+          <div class="destination-card__image">
+            <img src="img/terrehaute_rosehulman_chapel.jpg" alt="terrehaute">
+          </div>
+          <div class="destination-card__text">
+            <div class="destination-card__header">
+              <h3>Terre Haute, IN</h3>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div id="torontoca" class="destination-card" data-keywords="toronto,canada">
+        <a class="destination-card-link" href="/distance?destination=Toronto">
+          <div class="destination-card__image">
+            <img src="img/toronto_skyline.jpg" alt="toronto">
+          </div>
+          <div class="destination-card__text">
+            <div class="destination-card__header">
+              <h3>Toronto, CA</h3>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div id="veniceit" class="destination-card" data-keywords="venice,italy">
+        <a class="destination-card-link" href="/distance?destination=Venice">
+          <div class="destination-card__image">
+            <img src="img/venice_grandecanal.jpg" alt="venice">
+          </div>
+          <div class="destination-card__text">
+            <div class="destination-card__header">
+              <h3>Venice, IT</h3>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div id="westfieldin" class="destination-card" data-keywords="westfield,indiana">
+        <a class="destination-card-link" href="/distance?destination=Westfield">
+          <div class="destination-card__image">
+            <img src="img/westfield_in.jpg" alt="westfield">
+          </div>
+          <div class="destination-card__text">
+            <div class="destination-card__header">
+              <h3>Westfield, IN</h3>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div id="zionsvillein" class="destination-card" data-keywords="zionsville,indiana">
+        <a class="destination-card-link" href="/distance?destination=Zionsville">
+          <div class="destination-card__image">
+            <img src="img/zionsville_in.jpg" alt="zionsville">
+          </div>
+          <div class="destination-card__text">
+            <div class="destination-card__header">
+              <h3>Zionsville, IN</h3>
+            </div>
+          </div>
+        </a>
       </div>
     </div>
   </div>
-  <div id='canvas-container' class="hidden canvas-container">
+  <!-- <div id='canvas-container' class="hidden canvas-container">
     <div class="header">
       <h1 id='pie-header'>En Route to Destination!</h1>
       <div class="quadrant-picker">
@@ -277,7 +346,8 @@
     <div id='pie-background' class="background">
       <canvas id="scratchCanvas"></canvas>
     </div>
-  </div>
-  <script src="/scripts/script.js"></script>
+  </div> -->
+  <!-- <script src="/scripts/script.js"></script> -->
+  <script src="/scripts/search.js"></script>
 </body>
 </html>

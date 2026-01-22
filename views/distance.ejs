@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cassidy's Travel Pies</title>
+    <link rel="stylesheet" href="style/style.css"/>
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
+  </head>
+  <body>
+    <div class="distance-container">
+      <div class="top-nav"><a class="nav-link" href="/">travelpies</a></div>
+      <div class="distance-form-container">
+        <form class="distance-form" action="/pie" method="get">
+          <div class="distance-form-header">Route to <%= destination_display %></div>
+          <div class="distance-form-input">
+            <label for="distance">How Far Are You Going?</label>
+            <div class="distance-input">
+              <input id="distance" class="numerical-input" name="distance" required type="number" min="0" step="1"/>
+              <span>(miles)</span>
+            </div>
+            <input id="destination" hidden type="text" name="destination" value="<%= destination_raw %>">
+          </div>
+          <input class="submit-button" type="submit" value="Let's Go!">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

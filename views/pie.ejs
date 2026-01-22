@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cassidy's Travel Pies</title>
+  <link rel="stylesheet" href="style/style.css"/>
+  <link rel="icon" type="image/x-icon" href="img/logo.png">
+</head>
+<body>
+  <div id='canvas-container' class="canvas-container">
+    <div class="top-nav"><a class="nav-link" href="/">travelpies</a></div>
+    <div id='canvas-subcontainer' class="canvas-subcontainer">
+      <div class="header">
+        <h1 id='pie-header'>En Route to <%= destination_display %>!</h1>
+        <div class="quadrant-picker">
+          <h3 id='quadrant-label'>Leg 1 (of 8)</h3>
+          <div class="buttons">
+            <button class="button button__previous" onclick="previousFocusQuadrant()"><&ensp; Previous</button>
+            <button class="button button__next" onclick="nextFocusQuadrant()">Next &ensp;></button>
+          </div>
+        </div>
+        <div id="distance-details" class="distance-details"><span id="current-distance">0</span> out of <span id="total-distance"><%= distance %></span> total miles</div>
+      </div>
+      <div id='pie-background' class="background" style="background-image: url('img/<%= background %>');">
+        <canvas id="scratchCanvas"></canvas>
+      </div>
+    </div>
+  </div>
+  <script src="/scripts/script.js"></script>
+</body>
+</html>
